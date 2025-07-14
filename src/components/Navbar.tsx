@@ -33,14 +33,6 @@ const LogoImg = styled.img`
   display: block;
 `;
 
-const LogoText = styled.span`
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  color: #e7d7c1;
-  font-family: 'Playfair Display', serif;
-`;
-
 const NavLinks = styled.ul<{ $open?: boolean }>`
   display: flex;
   gap: 2.5rem;
