@@ -101,8 +101,9 @@ const welcomeContent = {
 
 const WelcomeSection: React.FC = () => {
   const { lang } = useContext(LanguageContext);
-  const dir = lang === 'ar' ? 'rtl' : 'ltr';
-  const c = welcomeContent[lang];
+  const typedLang = (lang === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
+  const dir = typedLang === 'ar' ? 'rtl' : 'ltr';
+  const c = welcomeContent[typedLang];
   return (
     <Section dir={dir}>
       <WelcomeContent>
@@ -113,7 +114,7 @@ const WelcomeSection: React.FC = () => {
           <Welcome $dir={dir}>{c.title}</Welcome>
           <Description $dir={dir}>{c.desc}</Description>
         </WelcomeTextBlock>
-        <WelcomeImage src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=800&q=80" alt={lang === 'ar' ? 'ديكور مطعم مغربي' : 'Elegant restaurant interior'} />
+        <WelcomeImage src="./src/assets/p1.png" alt={lang === 'ar' ? 'ديكور مطعم مغربي' : 'Elegant restaurant interior'} />
       </WelcomeContent>
     </Section>
   );

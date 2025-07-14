@@ -103,7 +103,7 @@ const content = {
   en: {
     animated: 'Savor the Flavors of Morocco',
     subtitle: 'Welcome to Nasma Moroccan Restaurant',
-    about: 'Step into Nasma and discover the magic of Morocco. Our restaurant blends traditional Moroccan hospitality with a modern twist, offering a feast for the senses. From aromatic tagines to sweet mint tea, every detail is crafted to transport you to Marrakech.',
+    about: 'Step into Nasma and discover the magic of Morocco. Our restaurant blends traditional Moroccan hospitality with a modern twist, offering a feast for the senses. From aromatic tagines to sweet mint tea, every detail is crafted to transport you to Tangier.',
     menu: 'Enjoy a warm, inviting ambiance with intricate lanterns, colorful tiles, and authentic Moroccan cuisine. Whether you are celebrating or simply savoring, Nasma is your destination for unforgettable moments.',
     contact: 'Explore our menu of couscous, tagines, pastilla, and more. Our team is dedicated to making your visit exceptional, from the first greeting to the last sip of tea.',
     cta: 'Reserve a Table',
@@ -115,7 +115,7 @@ const content = {
   ar: {
     animated: 'استمتع بنكهات المغرب الأصيلة',
     subtitle: 'مرحبًا بكم في مطعم نسمة المغربي',
-    about: 'ادخل إلى مطعم نسمة واكتشف سحر المغرب. يجمع مطعمنا بين الضيافة المغربية التقليدية واللمسة العصرية، لنقدم لك وليمة للحواس. من الطواجن العطرية إلى شاي النعناع الحلو، كل التفاصيل مصممة لتنقلك إلى مراكش.',
+    about: 'ادخل إلى مطعم نسمة واكتشف سحر المغرب. يجمع مطعمنا بين الضيافة المغربية التقليدية واللمسة العصرية، لنقدم لك وليمة للحواس. من الطواجن العطرية إلى شاي النعناع الحلو، كل التفاصيل مصممة لتنقلك إلى طنجة.',
     menu: 'استمتع بأجواء دافئة مع الفوانيس المزخرفة والبلاط الملون والمأكولات المغربية الأصيلة. سواء كنت تحتفل أو ترغب فقط في التذوق، نسمة هي وجهتك للحظات لا تُنسى.',
     contact: 'اكتشف قائمة الطعام لدينا من الكسكس والطواجن والبسطيلة والمزيد. فريقنا ملتزم بجعل زيارتك استثنائية من أول ترحيب حتى آخر رشفة شاي.',
     cta: 'احجز طاولتك',

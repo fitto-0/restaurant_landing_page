@@ -73,19 +73,19 @@ const PageImage = styled.img`
 const AboutPage = () => {
   const { lang } = React.useContext(LanguageContext);
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
-  const aboutContent = {
+  const aboutContent: Record<'en' | 'ar', { title: string; text1: string; text2: string }> = {
     en: {
       title: 'About Nasma',
-      text1: `Nasma Restaurant is dedicated to providing a unique dining experience, blending modern elegance with culinary artistry. Our team is passionate about hospitality and creating memorable moments for every guest.<br /><br />Founded in the heart of Marrakech, Nasma has become a destination for food lovers seeking both tradition and innovation. Our chefs are inspired by Moroccan heritage, sourcing the freshest local ingredients to craft dishes that surprise and delight.<br /><br />The restaurant’s interior is designed to evoke warmth and sophistication, with intricate tiles, lanterns, and rich colors. Whether you’re joining us for a romantic dinner, a family celebration, or a business lunch, our attentive staff ensures every detail is perfect.<br /><br />`,
+      text1: `Nasma Restaurant is dedicated to providing a unique dining experience, blending modern elegance with culinary artistry. Our team is passionate about hospitality and creating memorable moments for every guest.<br /><br />Founded in the heart of Tangier, Nasma has become a destination for food lovers seeking both tradition and innovation. Our chefs are inspired by Moroccan heritage, sourcing the freshest local ingredients to craft dishes that surprise and delight.<br /><br />The restaurant’s interior is designed to evoke warmth and sophistication, with intricate tiles, lanterns, and rich colors. Whether you’re joining us for a romantic dinner, a family celebration, or a business lunch, our attentive staff ensures every detail is perfect.<br /><br />`,
       text2: `<b>Our Philosophy:</b> To create memories through Moroccan food, service, and ambiance. Every guest is family at Nasma.<br /><br /><b>Our Team:</b> Led by Chef Youssef El Fassi, our kitchen and service staff are dedicated to excellence and hospitality.`
     },
     ar: {
       title: 'عن مطعم نسمة',
-      text1: `مطعم نسمة يجسد التقاليد المغربية الأصيلة مع لمسة عصرية. فريقنا شغوف بصنع لحظات لا تُنسى لكل ضيف.<br /><br />تأسس في قلب مراكش، نسمة هو وجهة لعشاق الطعام الباحثين عن الأصالة والابتكار. يستلهم طهاتنا من التراث المغربي ويستخدمون أجود المكونات المحلية لإعداد أطباق مدهشة.<br /><br />تصميم المطعم يجمع بين الدفء والرقي، مع البلاط المزخرف والفوانيس والألوان الغنية. سواء كنت تحتفل مع العائلة أو في عشاء رومانسي، يضمن لك طاقمنا الاهتمام بكل التفاصيل.<br /><br />`,
+      text1: `مطعم نسمة يجسد التقاليد المغربية الأصيلة مع لمسة عصرية. فريقنا شغوف بصنع لحظات لا تُنسى لكل ضيف.<br /><br />تأسس في قلب طنجة نسمة هو وجهة لعشاق الطعام الباحثين عن الأصالة والابتكار. يستلهم طهاتنا من التراث المغربي ويستخدمون أجود المكونات المحلية لإعداد أطباق مدهشة.<br /><br />تصميم المطعم يجمع بين الدفء والرقي، مع البلاط المزخرف والفوانيس والألوان الغنية. سواء كنت تحتفل مع العائلة أو في عشاء رومانسي، يضمن لك طاقمنا الاهتمام بكل التفاصيل.<br /><br />`,
       text2: `<b>فلسفتنا:</b> خلق الذكريات من خلال الطعام المغربي والخدمة والأجواء. كل ضيف هو فرد من عائلة نسمة.<br /><br /><b>فريقنا:</b> بإشراف الشيف يوسف الفاسي، يكرس فريق المطبخ والخدمة نفسه للتميز والضيافة.`
     }
   };
-  const c = aboutContent[lang];
+  const c = aboutContent[lang as 'en' | 'ar'];
   return (
     <PageSection $dir={dir}>
       <PageTitle $dir={dir}>{c.title}</PageTitle>
@@ -96,48 +96,196 @@ const AboutPage = () => {
   );
 };
 
-const MenuPage = () => {
+
+const MenuGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0 1.5rem 0;
+  width: 100%;
+`;
+const MenuCard = styled.div<{ $dir?: string }>`
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(10, 35, 66, 0.10);
+  padding: 1.5rem 1.2rem 2rem 1.2rem;
+  max-width: 340px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  direction: ${props => props.$dir};
+`;
+const MenuImg = styled.img`
+  width: 100%;
+  max-width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.1rem;
+`;
+const MenuCardTitle = styled.h3<{ $dir?: string }>`
+  color: #0a2342;
+  font-size: 1.25rem;
+  font-family: ${props => props.$dir === 'rtl' ? "'Amiri', 'Cairo', serif" : "'Playfair Display', serif"};
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+  text-align: center;
+`;
+const MenuCardDesc = styled.p<{ $dir?: string }>`
+  color: #444;
+  font-size: 1.05rem;
+  text-align: center;
+  font-family: inherit;
+`;
+
+function MenuPage() {
   const { lang } = React.useContext(LanguageContext);
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
-  const menuContent = {
-    en: {
-      title: 'Our Menu',
-      text1: `Discover the flavors of Morocco with our signature dishes, fresh ingredients, and traditional recipes. Each plate is a celebration of Moroccan heritage.`,
-      starters: `<b>Starters:</b><br />- Harira Soup<br />- Zaalouk (Eggplant Salad)<br />- Briouats (Savory Pastries)`,
-      mains: `<b>Main Courses:</b><br />- Lamb Tagine with Prunes<br />- Chicken with Preserved Lemon & Olives<br />- Vegetable Couscous`,
-      desserts: `<b>Desserts:</b><br />- Moroccan Orange Cake<br />- Chebakia (Sesame Cookies)<br />- Mint Tea Sorbet`,
-      drinks: `<b>Drinks:</b><br />Enjoy Moroccan mint tea, fresh juices, and a curated selection of Moroccan wines.`,
-      tasting: `<b>Chef’s Tasting Menu:</b><br />Experience a multi-course Moroccan feast, available by reservation.`,
-      allergies: `<b>Allergies & Dietary Needs:</b><br />Please inform our staff of any allergies or dietary preferences. We are happy to accommodate vegan, vegetarian, and gluten-free guests.`,
-      imgAlt: 'Moroccan menu',
-    },
-    ar: {
-      title: 'قائمة الطعام',
-      text1: `اكتشف نكهات المغرب مع أطباقنا المميزة والمكونات الطازجة والوصفات التقليدية. كل طبق هو احتفال بالتراث المغربي.`,
-      starters: `<b>المقبلات:</b><br />- حساء الحريرة<br />- زعلوك (سلطة الباذنجان)<br />- بريوات (فطائر مالحة)`,
-      mains: `<b>الأطباق الرئيسية:</b><br />- طاجين لحم بالبرقوق<br />- دجاج بالليمون المخلل والزيتون<br />- كسكس بالخضار`,
-      desserts: `<b>الحلويات:</b><br />- كعكة البرتقال المغربية<br />- شباكية<br />- سوربيه الشاي بالنعناع`,
-      drinks: `<b>المشروبات:</b><br />استمتع بشاي النعناع المغربي والعصائر الطازجة ومجموعة مختارة من النبيذ المغربي.`,
-      tasting: `<b>قائمة التذوق الخاصة بالشيف:</b><br />استمتع بوليمة مغربية متعددة الأطباق متوفرة بالحجز المسبق.`,
-      allergies: `<b>الحساسية والاحتياجات الغذائية:</b><br />يرجى إبلاغ طاقمنا بأي حساسية أو تفضيلات غذائية. يسعدنا تلبية احتياجات النباتيين والخاليين من الغلوتين.`,
-      imgAlt: 'قائمة الطعام المغربية',
-    }
+  const menuData = {
+    en: [
+      {
+        title: 'Harira Soup',
+        desc: 'A hearty tomato-based soup with lentils, chickpeas, and Moroccan spices.',
+        img: '/src/assets/harira.jpg',
+        category: 'Starters',
+      },
+      {
+        title: 'Zaalouk',
+        desc: 'Smoky eggplant and tomato salad with garlic, olive oil, and spices.',
+        img: '/src/assets/zaalouk.jpg',
+        category: 'Starters',
+      },
+      {
+        title: 'Briouats',
+        desc: 'Crispy pastry filled with spiced meat or cheese, fried to golden perfection.',
+        img: '/src/assets/briouat.jpg',
+        category: 'Starters',
+      },
+      {
+        title: 'Lamb Tagine with Prunes',
+        desc: 'Slow-cooked lamb with prunes, almonds, and a blend of sweet and savory spices.',
+        img: '/src/assets/tajinlb.jpg',
+        category: 'Mains',
+      },
+      {
+        title: 'Chicken with Preserved Lemon & Olives',
+        desc: 'Tender chicken braised with preserved lemons, olives, and saffron.',
+        img: '/src/assets/chickenlo.jpg',
+        category: 'Mains',
+      },
+      {
+        title: 'Vegetable Couscous',
+        desc: 'Steamed semolina with a medley of fresh vegetables and aromatic broth.',
+        img: '/src/assets/couscous.jpg',
+        category: 'Mains',
+      },
+      {
+        title: 'Moroccan Orange Cake',
+        desc: 'Moist cake infused with orange zest and a hint of cinnamon.',
+        img: '/src/assets/orange_cake.jpg',
+        category: 'Desserts',
+      },
+      {
+        title: 'Chebakia',
+        desc: 'Sesame cookies fried and coated in honey, a Ramadan favorite.',
+        img: '/src/assets/chebakia.jpg',
+        category: 'Desserts',
+      },
+      {
+        title: 'Mint Tea Tray',
+        desc: 'Refreshing sorbet made with Moroccan mint tea and citrus.',
+        img: '/src/assets/mint_tea.jpg',
+        category: 'Desserts',
+      },
+    ],
+    ar: [
+      {
+        title: 'حساء الحريرة',
+        desc: 'حساء مغربي غني بالطماطم والعدس والحمص وتوابل مغربية أصيلة.',
+        img: '/src/assets/harira.jpg',
+        category: 'المقبلات',
+      },
+      {
+        title: 'زعلوك',
+        desc: 'سلطة الباذنجان المدخن مع الطماطم والثوم وزيت الزيتون والتوابل.',
+        img: '/src/assets/zaalouk.jpg',
+        category: 'المقبلات',
+      },
+      {
+        title: 'بريوات',
+        desc: 'فطائر مقرمشة محشوة باللحم أو الجبن ومقلية حتى تصبح ذهبية.',
+        img: '/src/assets/briouat.jpg',
+        category: 'المقبلات',
+      },
+      {
+        title: 'طاجين لحم بالبرقوق',
+        desc: 'لحم مطهو ببطء مع البرقوق واللوز ومزيج من التوابل الحلوة والمالحة.',
+        img: '/src/assets/tajinlb.jpg',
+        category: 'الأطباق الرئيسية',
+      },
+      {
+        title: 'دجاج بالليمون المخلل والزيتون',
+        desc: 'دجاج طري مطهو مع الليمون المخلل والزيتون والزعفران.',
+        img: '/src/assets/chickenlo.jpg',
+        category: 'الأطباق الرئيسية',
+      },
+      {
+        title: 'كسكس بالخضار',
+        desc: 'سميد مطهو على البخار مع تشكيلة من الخضار الطازجة ومرق عطري.',
+        img: '/src/assets/couscous.jpg',
+        category: 'الأطباق الرئيسية',
+      },
+      {
+        title: 'كعكة البرتقال المغربية',
+        desc: 'كعكة رطبة بنكهة قشر البرتقال ولمسة قرفة.',
+        img: '/src/assets/orange_cake.jpg',
+        category: 'الحلويات',
+      },
+      {
+        title: 'شباكية',
+        desc: 'حلويات السمسم المقلية والمغطاة بالعسل، مفضلة في رمضان.',
+        img: '/src/assets/chebakia.jpg',
+        category: 'الحلويات',
+      },
+      {
+        title: 'صينية شاي بالنعناع',
+        desc: 'تجربة مغربية أصيلة مع صينية شاي بالنعناع الطازج، تُقدم مع الحلويات التقليدية.',
+        img: '/src/assets/mint_tea.jpg',
+        category: 'الحلويات',
+      },
+    ],
   };
-  const c = menuContent[lang];
+  const c = lang === 'ar' ? {
+    title: 'قائمة الطعام',
+    text1: 'اكتشف نكهات المغرب مع أطباقنا المتنوعة والمكونات الطازجة والوصفات التقليدية. كل طبق هو احتفال بالتراث المغربي.',
+    imgAlt: 'قائمة الطعام المغربية',
+  } : {
+    title: 'Our Menu',
+    text1: 'Discover the flavors of Morocco with our diverse signature dishes, fresh ingredients, and traditional recipes. Each plate is a celebration of Moroccan heritage.',
+    imgAlt: 'Moroccan menu',
+  };
   return (
     <PageSection $dir={dir}>
       <PageTitle $dir={dir}>{c.title}</PageTitle>
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.text1 }} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.starters }} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.mains }} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.desserts }} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.drinks }} />
-      <PageImage src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt={c.imgAlt} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.tasting }} />
-      <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.allergies }} />
+      <PageText $dir={dir}>{c.text1}</PageText>
+      <MenuGrid>
+        {menuData[lang as 'en' | 'ar'].map((item, i) => (
+          <MenuCard $dir={dir} key={i}>
+            <MenuImg src={item.img} alt={item.title} />
+            <MenuCardTitle $dir={dir}>{item.title}</MenuCardTitle>
+            <MenuCardDesc $dir={dir}>{item.desc}</MenuCardDesc>
+          </MenuCard>
+        ))}
+      </MenuGrid>
     </PageSection>
   );
-};
+}
 
 const ContactPage = () => {
   const { lang } = React.useContext(LanguageContext);
@@ -145,18 +293,18 @@ const ContactPage = () => {
   const contactContent = {
     en: {
       title: 'Contact Us',
-      text1: `Have questions or want to book a private event? Reach out to our team and we’ll be happy to assist you.<br /><br /><b>Address:</b> 123 Medina Street, Marrakech<br /><b>Phone:</b> +212 5 24 44 44 44<br /><b>Email:</b> info@nasma-restaurant.com<br /><br /><b>Opening Hours:</b><br />Monday – Sunday: 12:00 – 23:00<br /><br /><b>Private Events:</b><br />Nasma offers private riad dining and event planning for weddings, birthdays, and corporate gatherings. Contact us for a custom quote.<br /><br /><b>Follow Us:</b><br />Instagram: @nasmamaroc &bull; Facebook: Nasma Restaurant`,
+      text1: `Have questions or want to book a private event? Reach out to our team and we’ll be happy to assist you.<br /><br /><b>Address:</b> 123 Medina Street, Tangier<br /><b>Phone:</b> +212 5 24 44 44 44<br /><b>Email:</b> info@nasma-restaurant.com<br /><br /><b>Opening Hours:</b><br />Monday – Sunday: 12:00 – 23:00<br /><br /><b>Private Events:</b><br />Nasma offers private riad dining and event planning for weddings, birthdays, and corporate gatherings. Contact us for a custom quote.<br /><br /><b>Follow Us:</b><br />Instagram: @nasmamaroc &bull; Facebook: Nasma Restaurant`,
       imgAlt: 'Contact Nasma',
-      text2: `<b>Directions:</b><br />We are located in the heart of Marrakech, easily accessible by taxi and bus. Parking is available nearby.<br /><br /><b>Feedback:</b><br />We value your feedback! Please email or call us with your comments and suggestions.`
+      text2: `<b>Directions:</b><br />We are located in the heart of Tangier, easily accessible by taxi and bus. Parking is available nearby.<br /><br /><b>Feedback:</b><br />We value your feedback! Please email or call us with your comments and suggestions.`
     },
     ar: {
       title: 'اتصل بنا',
-      text1: `هل لديك أسئلة أو ترغب في حجز مناسبة خاصة؟ تواصل مع فريقنا وسنكون سعداء بمساعدتك.<br /><br /><b>العنوان:</b> 123 شارع المدينة، مراكش<br /><b>الهاتف:</b> +212 5 24 44 44 44<br /><b>البريد الإلكتروني:</b> info@nasma-restaurant.com<br /><br /><b>ساعات العمل:</b><br />الاثنين – الأحد: 12:00 – 23:00<br /><br /><b>الفعاليات الخاصة:</b><br />يقدم نسمة غرف طعام خاصة وتخطيط فعاليات للأعراس وأعياد الميلاد والاجتماعات. تواصل معنا للحصول على عرض خاص.<br /><br /><b>تابعنا:</b><br />إنستغرام: @nasmamaroc &bull; فيسبوك: مطعم نسمة`,
+      text1: `هل لديك أسئلة أو ترغب في حجز مناسبة خاصة؟ تواصل مع فريقنا وسنكون سعداء بمساعدتك.<br /><br /><b>العنوان:</b> 123 شارع المدينة، طنجة<br /><b>الهاتف:</b> +212 5 24 44 44 44<br /><b>البريد الإلكتروني:</b> info@nasma-restaurant.com<br /><br /><b>ساعات العمل:</b><br />الاثنين – الأحد: 12:00 – 23:00<br /><br /><b>الفعاليات الخاصة:</b><br />يقدم نسمة غرف طعام خاصة وتخطيط فعاليات للأعراس وأعياد الميلاد والاجتماعات. تواصل معنا للحصول على عرض خاص.<br /><br /><b>تابعنا:</b><br />إنستغرام: @nasmamaroc &bull; فيسبوك: مطعم نسمة`,
       imgAlt: 'اتصل بمطعم نسمة',
-      text2: `<b>الاتجاهات:</b><br />نحن في قلب مراكش، يسهل الوصول إلينا بسيارة الأجرة أو الحافلة. تتوفر مواقف سيارات قريبة.<br /><br /><b>ملاحظاتكم:</b><br />نقدّر ملاحظاتكم! يرجى مراسلتنا أو الاتصال بنا بملاحظاتكم واقتراحاتكم.`
+      text2: `<b>الاتجاهات:</b><br />نحن في قلب طنجة يسهل الوصول إلينا بسيارة الأجرة أو الحافلة. تتوفر مواقف سيارات قريبة.<br /><br /><b>ملاحظاتكم:</b><br />نقدّر ملاحظاتكم! يرجى مراسلتنا أو الاتصال بنا بملاحظاتكم واقتراحاتكم.`
     }
   };
-  const c = contactContent[lang];
+  const c = contactContent[lang as 'en' | 'ar'];
   return (
     <PageSection $dir={dir}>
       <PageTitle $dir={dir}>{c.title}</PageTitle>
@@ -258,15 +406,15 @@ const ReservationSectionPage = () => {
     en: {
       title: 'Reserve Your Table',
       subtitle: 'Experience the best of Nasma. Book your table for a memorable evening of fine dining and hospitality.',
-      details: `<b>Opening Hours:</b> Mon–Sun, 12:00–23:00<br /><b>Location:</b> 123 Medina Street, Marrakech<br /><b>Phone:</b> +212 5 24 44 44 44<br /><b>Private Dining & Events:</b> Available on request<br /><b>Special Requests:</b> Vegan, vegetarian, gluten-free, and allergies accommodated`,
+      details: `<b>Opening Hours:</b> Mon–Sun, 12:00–23:00<br /><b>Location:</b> 123 Medina Street, Tangier<br /><b>Phone:</b> +212 5 24 44 44 44<br /><b>Private Dining & Events:</b> Available on request<br /><b>Special Requests:</b> Vegan, vegetarian, gluten-free, and allergies accommodated`,
     },
     ar: {
       title: 'احجز طاولتك',
       subtitle: 'استمتع بأفضل الأوقات في نسمة. احجز طاولتك لسهرة مغربية لا تُنسى.',
-      details: `<b>ساعات العمل:</b> الاثنين – الأحد، 12:00–23:00<br /><b>العنوان:</b> 123 شارع المدينة، مراكش<br /><b>الهاتف:</b> +212 5 24 44 44 44<br /><b>الفعاليات الخاصة:</b> متوفرة عند الطلب<br /><b>الطلبات الخاصة:</b> نوفر خيارات نباتية وخالية من الغلوتين ونراعي جميع الحساسيات الغذائية`,
+      details: `<b>ساعات العمل:</b> الاثنين – الأحد، 12:00–23:00<br /><b>العنوان:</b> 123 شارع المدينة، طنجة<br /><b>الهاتف:</b> +212 5 24 44 44 44<br /><b>الفعاليات الخاصة:</b> متوفرة عند الطلب<br /><b>الطلبات الخاصة:</b> نوفر خيارات نباتية وخالية من الغلوتين ونراعي جميع الحساسيات الغذائية`,
     }
   };
-  const c = reservationContent[lang];
+  const c = reservationContent[lang as 'en' | 'ar'];
   return (
     <ReservationBg dir={dir} style={{ fontFamily: dir === 'rtl' ? "'Amiri', 'Cairo', serif" : undefined }}>
       <Glow />

@@ -52,10 +52,20 @@ const FooterText = styled.p<{ $dir?: string }>`
   font-family: inherit;
 `;
 
+type Lang = 'en' | 'ar';
+
+interface FooterContent {
+  links: { label: string; href: string }[];
+  copyright: string;
+  address: string;
+  phone: string;
+  made: string;
+}
+
 const Footer: React.FC = () => {
-  const { lang } = React.useContext(LanguageContext);
+  const { lang } = React.useContext(LanguageContext) as { lang: Lang };
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
-  const content = {
+  const content: Record<Lang, FooterContent> = {
     en: {
       links: [
         { label: 'Home', href: '/' },
@@ -65,7 +75,7 @@ const Footer: React.FC = () => {
         { label: 'Reserve', href: '/reserve' },
       ],
       copyright: `© ${new Date().getFullYear()} Nasma Moroccan Restaurant. All rights reserved.`,
-      address: '123 Medina Street, Marrakech',
+      address: '123 Medina Street, Tangier',
       phone: '+212 5 24 44 44 44',
       made: 'Made with passion in Morocco',
     },
@@ -78,7 +88,7 @@ const Footer: React.FC = () => {
         { label: 'الحجز', href: '/reserve' },
       ],
       copyright: `© ${new Date().getFullYear()} مطعم نسمة المغربي. جميع الحقوق محفوظة.`,
-      address: '123 شارع المدينة، مراكش',
+      address: '123 شارع المدينة، طنجة',
       phone: '+212 5 24 44 44 44',
       made: 'بكل شغف في المغرب',
     },
