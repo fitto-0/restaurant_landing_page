@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 // Language context for toggling EN/AR
-export const LanguageContext = React.createContext({ lang: 'en', setLang: (l: "en" | "ar") => {} });
+export const LanguageContext = React.createContext({ lang: 'en', setLang: (_l: "en" | "ar") => {} });
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
 

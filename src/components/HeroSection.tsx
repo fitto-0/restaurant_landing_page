@@ -46,11 +46,6 @@ const HeroCol = styled.div<{ $marginRight?: boolean }>`
   }
 `;
 
-const TextBlock = styled.div`
-  max-width: 600px;
-  color: #e7d7c1;
-  padding-top: 2rem;
-`;
 
 const SubTitle = styled(motion.h2)`
   font-size: 2rem;
