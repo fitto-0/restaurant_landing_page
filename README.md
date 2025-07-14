@@ -1,11 +1,15 @@
-# Lumière Restaurant Landing Page
+# Nasma Moroccan Restaurant Landing Page
 
-A modern React landing page for a restaurant, featuring:
-- 3D objects (Three.js)
+A modern, elegant landing page for **Nasma**—a Moroccan restaurant in Tangier blending tradition and contemporary style.
+
+## Features
+- Bilingual support: English & Arabic
+- Authentic Moroccan menu showcase
 - Smooth animations (Framer Motion)
-- Creative, aesthetic design
-- Hero section with animated text and 3D object
+- Creative, aesthetic design inspired by Moroccan heritage
+- Hero section with animated text
 - Modular code with styled-components
+- Responsive and mobile-friendly
 
 ## Getting Started
 
@@ -22,14 +26,14 @@ A modern React landing page for a restaurant, featuring:
 
 ## Tech Stack
 - [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- [Three.js](https://threejs.org/) for 3D objects
 - [Framer Motion](https://www.framer.com/motion/) for animations
 - [styled-components](https://styled-components.com/) for styling
 
 ## Customization
-- Replace the hero text and 3D object as desired in `src/components/HeroSection.tsx` and `src/components/ThreeDObject.tsx`.
-- Update global styles in `src/styles/GlobalStyles.ts`.
+- Update menu items and images in `src/App.tsx` and `src/assets/`.
+- Change hero text in `src/components/HeroSection.tsx`.
+- Adjust global styles in `src/styles/GlobalStyles.ts`.
 
 ---
 
-© 2025 Lumière Restaurant. All rights reserved.
+© 2025 Nasma Moroccan Restaurant. All rights reserved.
