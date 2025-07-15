@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
+import { LanguageContext } from './Navbar';
 
 const FormSection = styled.section`
   width: 100%;
@@ -63,24 +64,41 @@ const SuccessMsg = styled.div`
 
 const ReservationSection: React.FC = () => {
   const [success, setSuccess] = useState(false);
+  const { lang } = useContext(LanguageContext) as { lang: 'en' | 'ar' };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSuccess(true);
   };
   return (
     <FormSection id="reserve">
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" required />
-        <Label htmlFor="date">Date</Label>
-        <Input id="date" name="date" type="date" required />
-        <Label htmlFor="time">Time</Label>
-        <Input id="time" name="time" type="time" required />
-        <Label htmlFor="guests">Guests</Label>
-        <Input id="guests" name="guests" type="number" min="1" max="20" required />
-        <Button type="submit">Reserve</Button>
-        {success && <SuccessMsg>Reservation successful! We look forward to welcoming you.</SuccessMsg>}
-      </Form>
+      {lang === 'ar' ? (
+        <Form onSubmit={handleSubmit} dir="rtl" style={{ fontFamily: 'Amiri, Cairo, serif' }}>
+          <Label htmlFor="name">الاسم</Label>
+          <Input id="name" name="name" required />
+          <Label htmlFor="date">التاريخ</Label>
+          <Input id="date" name="date" type="date" required />
+          <Label htmlFor="time">الوقت</Label>
+          <Input id="time" name="time" type="time" required />
+          <Label htmlFor="guests">عدد الضيوف</Label>
+          <Input id="guests" name="guests" type="number" min="1" max="20" required />
+          <Button type="submit">احجز الآن</Button>
+          {success && <SuccessMsg>تم الحجز بنجاح! نتطلع لاستقبالكم في مطعم نسمة.</SuccessMsg>}
+        </Form>
+      ) : (
+        <Form onSubmit={handleSubmit}>
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" name="name" required />
+          <Label htmlFor="date">Date</Label>
+          <Input id="date" name="date" type="date" required />
+          <Label htmlFor="time">Time</Label>
+          <Input id="time" name="time" type="time" required />
+          <Label htmlFor="guests">Guests</Label>
+          <Input id="guests" name="guests" type="number" min="1" max="20" required />
+          <Button type="submit">Reserve</Button>
+          {success && <SuccessMsg>Reservation successful! We look forward to welcoming you.</SuccessMsg>}
+        </Form>
+      )}
+      
     </FormSection>
   );
 };

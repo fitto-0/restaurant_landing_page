@@ -227,9 +227,10 @@ const ImagesSection: React.FC = () => {
       },
       gallery: [
         { src: '/src/assets/ma_ambiance.png', alt: 'Ambiance' },
-        { src: '/src/assets/ma_dish.png', alt: 'Dish' },
+        { src: '/src/assets/harira.jpg', alt: 'Harira Soup' },
+        { src: '/src/assets/chef_img.jpg', alt: 'Chef Youssef' },
+        { src: '/src/assets/mint_tea.jpg', alt: 'Mint Tea' },
         { src: '/src/assets/elegant_restau_inter.jpg', alt: 'Interior' },
-        { src: '/src/assets/logo1.png', alt: 'Logo' },
       ],
       events: [
         {
@@ -285,9 +286,10 @@ const ImagesSection: React.FC = () => {
       },
       gallery: [
         { src: '/src/assets/ma_ambiance.png', alt: 'الأجواء' },
-        { src: '/src/assets/ma_dish.png', alt: 'طبق' },
+        { src: '/src/assets/harira.jpg', alt: 'حساء الحريرة' },
+        { src: '/src/assets/chef_img.jpg', alt: 'الشيف يوسف' },
+        { src: '/src/assets/mint_tea.jpg', alt: 'شاي بالنعناع' },
         { src: '/src/assets/elegant_restau_inter.jpg', alt: 'الداخلية' },
-        { src: '/src/assets/logo1.png', alt: 'شعار' },
       ],
       events: [
         {
