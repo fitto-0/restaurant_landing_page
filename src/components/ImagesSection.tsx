@@ -188,19 +188,19 @@ const ImagesSection: React.FC = () => {
       title: 'A Glimpse of Nasma',
       images: [
         {
-          src: '/src/assets/ma_ambiance.png',
+          src: '/public/images/ma_ambiance.png',
           alt: 'Nasma Interior',
           title: 'Traditional Moroccan Ambiance',
           desc: 'Experience the warmth and elegance of Moroccan décor in a cozy, inviting setting.'
         },
         {
-          src: '/src/assets/our_identity.png',
+          src: '/public/images/our_identity.png',
           alt: 'Nasma Logo',
           title: 'Our Identity',
           desc: 'Nasma blends tradition and modernity, offering a unique culinary journey.'
         },
         {
-          src: '/src/assets/ma_dish.png',
+          src: '/public/images/ma_dish.png',
           alt: 'Moroccan Dish',
           title: 'Signature Moroccan Dish',
           desc: 'Savor authentic Moroccan flavors, crafted with passion and heritage.'
@@ -223,14 +223,14 @@ const ImagesSection: React.FC = () => {
       chef: {
         name: 'Chef Youssef',
         story: 'With over 20 years of experience, Chef Youssef brings the heart of Moroccan cuisine to your table. His passion for authentic flavors and creative presentation makes every dish a celebration of tradition and innovation.',
-        img: '/src/assets/chef_img.jpg',
+        img: '/public/images/chef_img.jpg',
       },
       gallery: [
-        { src: '/src/assets/ma_ambiance.png', alt: 'Ambiance' },
-        { src: '/src/assets/harira.jpg', alt: 'Harira Soup' },
-        { src: '/src/assets/chef_img.jpg', alt: 'Chef Youssef' },
-        { src: '/src/assets/mint_tea.jpg', alt: 'Mint Tea' },
-        { src: '/src/assets/elegant_restau_inter.jpg', alt: 'Interior' },
+        { src: '/public/images/ma_ambiance.png', alt: 'Ambiance' },
+        { src: '/public/images/harira.jpg', alt: 'Harira Soup' },
+        { src: '/public/images/chef_img.jpg', alt: 'Chef Youssef' },
+        { src: '/public/images/mint_tea.jpg', alt: 'Mint Tea' },
+        { src: '/public/images/elegant_restau_inter.jpg', alt: 'Interior' },
       ],
       events: [
         {
@@ -247,19 +247,19 @@ const ImagesSection: React.FC = () => {
       title: 'لمحات من نسمة',
       images: [
         {
-          src: '/src/assets/ma_ambiance.png',
+          src: '/public/images/ma_ambiance.png',
           alt: 'الداخلية في نسمة',
           title: 'أجواء مغربية تقليدية',
           desc: 'استمتع بدفء وأناقة الديكور المغربي في أجواء مريحة وجذابة.'
         },
         {
-          src: '/src/assets/our_identity.png',
+          src: '/public/images/our_identity.png',
           alt: 'شعار نسمة',
           title: 'هويتنا',
           desc: 'تجمع نسمة بين الأصالة والحداثة لتقدم لكم تجربة طهي فريدة.'
         },
         {
-          src: '/src/assets/ma_dish.png',
+          src: '/public/images/ma_dish.png',
           alt: 'طبق مغربي',
           title: 'طبق مغربي مميز',
           desc: 'تذوقوا النكهات المغربية الأصيلة المحضرة بشغف وإرث عريق.'
@@ -282,14 +282,14 @@ const ImagesSection: React.FC = () => {
       chef: {
         name: 'الشيف يوسف',
         story: 'بخبرة تزيد عن 20 عامًا، يجلب الشيف يوسف روح المطبخ المغربي إلى مائدتكم. شغفه بالنكهات الأصيلة وتقديمه الإبداعي يجعل كل طبق احتفالاً بالتقاليد والابتكار.',
-        img: '/src/assets/chef_img.jpg',
+        img: '/public/images/chef_img.jpg',
       },
       gallery: [
-        { src: '/src/assets/ma_ambiance.png', alt: 'الأجواء' },
-        { src: '/src/assets/harira.jpg', alt: 'حساء الحريرة' },
-        { src: '/src/assets/chef_img.jpg', alt: 'الشيف يوسف' },
-        { src: '/src/assets/mint_tea.jpg', alt: 'شاي بالنعناع' },
-        { src: '/src/assets/elegant_restau_inter.jpg', alt: 'الداخلية' },
+        { src: '/public/images/ma_ambiance.png', alt: 'الأجواء' },
+        { src: '/public/images/harira.jpg', alt: 'حساء الحريرة' },
+        { src: '/public/images/chef_img.jpg', alt: 'الشيف يوسف' },
+        { src: '/public/images/mint_tea.jpg', alt: 'شاي بالنعناع' },
+        { src: '/public/images/elegant_restau_inter.jpg', alt: 'الداخلية' },
       ],
       events: [
         {
