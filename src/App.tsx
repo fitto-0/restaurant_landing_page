@@ -90,7 +90,7 @@ const AboutPage = () => {
     <PageSection $dir={dir}>
       <PageTitle $dir={dir}>{c.title}</PageTitle>
       <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.text1 }} />
-      <PageImage src="./public/elegant_restau_inter.jpg" alt={c.title} />
+      <PageImage src="./elegant_restau_inter.jpg" alt={c.title} />
       <PageText $dir={dir} dangerouslySetInnerHTML={{ __html: c.text2 }} />
     </PageSection>
   );
@@ -152,55 +152,55 @@ function MenuPage() {
       {
         title: 'Harira Soup',
         desc: 'A hearty tomato-based soup with lentils, chickpeas, and Moroccan spices.',
-        img: '/public/harira.jpg',
+        img: '/harira.jpg',
         category: 'Starters',
       },
       {
         title: 'Zaalouk',
         desc: 'Smoky eggplant and tomato salad with garlic, olive oil, and spices.',
-        img: '/public/zaalouk.jpg',
+        img: '/zaalouk.jpg',
         category: 'Starters',
       },
       {
         title: 'Briouats',
         desc: 'Crispy pastry filled with spiced meat or cheese, fried to golden perfection.',
-        img: '/public/briouat.jpg',
+        img: '/briouat.jpg',
         category: 'Starters',
       },
       {
         title: 'Lamb Tagine with Prunes',
         desc: 'Slow-cooked lamb with prunes, almonds, and a blend of sweet and savory spices.',
-        img: '/public/tajinlb.jpg',
+        img: '/tajinlb.jpg',
         category: 'Mains',
       },
       {
         title: 'Chicken with Preserved Lemon & Olives',
         desc: 'Tender chicken braised with preserved lemons, olives, and saffron.',
-        img: '/public/chickenlo.jpg',
+        img: '/chickenlo.jpg',
         category: 'Mains',
       },
       {
         title: 'Vegetable Couscous',
         desc: 'Steamed semolina with a medley of fresh vegetables and aromatic broth.',
-        img: '/public/couscous.jpg',
+        img: '/couscous.jpg',
         category: 'Mains',
       },
       {
         title: 'Moroccan Orange Cake',
         desc: 'Moist cake infused with orange zest and a hint of cinnamon.',
-        img: '/public/orange_cake.jpg',
+        img: '/orange_cake.jpg',
         category: 'Desserts',
       },
       {
         title: 'Chebakia',
         desc: 'Sesame cookies fried and coated in honey, a Ramadan favorite.',
-        img: '/public/chebakia.jpg',
+        img: '/chebakia.jpg',
         category: 'Desserts',
       },
       {
         title: 'Mint Tea Tray',
         desc: 'Refreshing sorbet made with Moroccan mint tea and citrus.',
-        img: '/public/mint_tea.jpg',
+        img: '/mint_tea.jpg',
         category: 'Desserts',
       },
     ],
@@ -208,55 +208,55 @@ function MenuPage() {
       {
         title: 'حساء الحريرة',
         desc: 'حساء مغربي غني بالطماطم والعدس والحمص وتوابل مغربية أصيلة.',
-        img: '/public/harira.jpg',
+        img: '/harira.jpg',
         category: 'المقبلات',
       },
       {
         title: 'زعلوك',
         desc: 'سلطة الباذنجان المدخن مع الطماطم والثوم وزيت الزيتون والتوابل.',
-        img: '/public/zaalouk.jpg',
+        img: '/zaalouk.jpg',
         category: 'المقبلات',
       },
       {
         title: 'بريوات',
         desc: 'فطائر مقرمشة محشوة باللحم أو الجبن ومقلية حتى تصبح ذهبية.',
-        img: '/public/briouat.jpg',
+        img: '/briouat.jpg',
         category: 'المقبلات',
       },
       {
         title: 'طاجين لحم بالبرقوق',
         desc: 'لحم مطهو ببطء مع البرقوق واللوز ومزيج من التوابل الحلوة والمالحة.',
-        img: '/public/tajinlb.jpg',
+        img: '/tajinlb.jpg',
         category: 'الأطباق الرئيسية',
       },
       {
         title: 'دجاج بالليمون المخلل والزيتون',
         desc: 'دجاج طري مطهو مع الليمون المخلل والزيتون والزعفران.',
-        img: '/public/chickenlo.jpg',
+        img: '/chickenlo.jpg',
         category: 'الأطباق الرئيسية',
       },
       {
         title: 'كسكس بالخضار',
         desc: 'سميد مطهو على البخار مع تشكيلة من الخضار الطازجة ومرق عطري.',
-        img: '/public/couscous.jpg',
+        img: '/couscous.jpg',
         category: 'الأطباق الرئيسية',
       },
       {
         title: 'كعكة البرتقال المغربية',
         desc: 'كعكة رطبة بنكهة قشر البرتقال ولمسة قرفة.',
-        img: '/public/orange_cake.jpg',
+        img: '/orange_cake.jpg',
         category: 'الحلويات',
       },
       {
         title: 'شباكية',
         desc: 'حلويات السمسم المقلية والمغطاة بالعسل، مفضلة في رمضان.',
-        img: '/public/chebakia.jpg',
+        img: '/chebakia.jpg',
         category: 'الحلويات',
       },
       {
         title: 'صينية شاي بالنعناع',
         desc: 'تجربة مغربية أصيلة مع صينية شاي بالنعناع الطازج، تُقدم مع الحلويات التقليدية.',
-        img: '/public/mint_tea.jpg',
+        img: '/mint_tea.jpg',
         category: 'الحلويات',
       },
     ],
