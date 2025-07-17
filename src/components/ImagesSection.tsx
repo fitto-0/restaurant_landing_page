@@ -188,19 +188,19 @@ const ImagesSection: React.FC = () => {
       title: 'A Glimpse of Nasma',
       images: [
         {
-          src: '/public/ma_ambiance.png',
+          src: '/ma_ambiance.png',
           alt: 'Nasma Interior',
           title: 'Traditional Moroccan Ambiance',
           desc: 'Experience the warmth and elegance of Moroccan décor in a cozy, inviting setting.'
         },
         {
-          src: '/public/our_identity.png',
+          src: '/our_identity.png',
           alt: 'Nasma Logo',
           title: 'Our Identity',
           desc: 'Nasma blends tradition and modernity, offering a unique culinary journey.'
         },
         {
-          src: '/public/ma_dish.png',
+          src: '/ma_dish.png',
           alt: 'Moroccan Dish',
           title: 'Signature Moroccan Dish',
           desc: 'Savor authentic Moroccan flavors, crafted with passion and heritage.'
@@ -223,14 +223,14 @@ const ImagesSection: React.FC = () => {
       chef: {
         name: 'Chef Youssef',
         story: 'With over 20 years of experience, Chef Youssef brings the heart of Moroccan cuisine to your table. His passion for authentic flavors and creative presentation makes every dish a celebration of tradition and innovation.',
-        img: '/public/chef_img.jpg',
+        img: '/chef_img.jpg',
       },
       gallery: [
-        { src: '/public/ma_ambiance.png', alt: 'Ambiance' },
-        { src: '/public/harira.jpg', alt: 'Harira Soup' },
-        { src: '/public/chef_img.jpg', alt: 'Chef Youssef' },
-        { src: '/public/mint_tea.jpg', alt: 'Mint Tea' },
-        { src: '/public/elegant_restau_inter.jpg', alt: 'Interior' },
+        { src: '/ma_ambiance.png', alt: 'Ambiance' },
+        { src: '/harira.jpg', alt: 'Harira Soup' },
+        { src: '/chef_img.jpg', alt: 'Chef Youssef' },
+        { src: '/mint_tea.jpg', alt: 'Mint Tea' },
+        { src: '/elegant_restau_inter.jpg', alt: 'Interior' },
       ],
       events: [
         {
@@ -247,19 +247,19 @@ const ImagesSection: React.FC = () => {
       title: 'لمحات من نسمة',
       images: [
         {
-          src: '/public/ma_ambiance.png',
+          src: '/ma_ambiance.png',
           alt: 'الداخلية في نسمة',
           title: 'أجواء مغربية تقليدية',
           desc: 'استمتع بدفء وأناقة الديكور المغربي في أجواء مريحة وجذابة.'
         },
         {
-          src: '/public/our_identity.png',
+          src: '/our_identity.png',
           alt: 'شعار نسمة',
           title: 'هويتنا',
           desc: 'تجمع نسمة بين الأصالة والحداثة لتقدم لكم تجربة طهي فريدة.'
         },
         {
-          src: '/public/ma_dish.png',
+          src: '/ma_dish.png',
           alt: 'طبق مغربي',
           title: 'طبق مغربي مميز',
           desc: 'تذوقوا النكهات المغربية الأصيلة المحضرة بشغف وإرث عريق.'
@@ -282,14 +282,14 @@ const ImagesSection: React.FC = () => {
       chef: {
         name: 'الشيف يوسف',
         story: 'بخبرة تزيد عن 20 عامًا، يجلب الشيف يوسف روح المطبخ المغربي إلى مائدتكم. شغفه بالنكهات الأصيلة وتقديمه الإبداعي يجعل كل طبق احتفالاً بالتقاليد والابتكار.',
-        img: '/public/chef_img.jpg',
+        img: '/chef_img.jpg',
       },
       gallery: [
-        { src: '/public/ma_ambiance.png', alt: 'الأجواء' },
-        { src: '/public/harira.jpg', alt: 'حساء الحريرة' },
-        { src: '/public/chef_img.jpg', alt: 'الشيف يوسف' },
-        { src: '/public/mint_tea.jpg', alt: 'شاي بالنعناع' },
-        { src: '/public/elegant_restau_inter.jpg', alt: 'الداخلية' },
+        { src: '/ma_ambiance.png', alt: 'الأجواء' },
+        { src: '/harira.jpg', alt: 'حساء الحريرة' },
+        { src: '/chef_img.jpg', alt: 'الشيف يوسف' },
+        { src: '/mint_tea.jpg', alt: 'شاي بالنعناع' },
+        { src: '/elegant_restau_inter.jpg', alt: 'الداخلية' },
       ],
       events: [
         {
