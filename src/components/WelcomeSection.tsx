@@ -114,7 +114,7 @@ const WelcomeSection: React.FC = () => {
           <Welcome $dir={dir}>{c.title}</Welcome>
           <Description $dir={dir}>{c.desc}</Description>
         </WelcomeTextBlock>
-        <WelcomeImage src="./public/images/p1.png" alt={lang === 'ar' ? 'ديكور مطعم مغربي' : 'Elegant restaurant interior'} />
+        <WelcomeImage src="./public/p1.png" alt={lang === 'ar' ? 'ديكور مطعم مغربي' : 'Elegant restaurant interior'} />
       </WelcomeContent>
     </Section>
   );
